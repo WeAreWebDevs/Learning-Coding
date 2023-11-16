@@ -1,23 +1,75 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- A button to open the popup form -->
-<button class="open-button" onclick="openForm()">Open Form</button>
-
-<!-- The form -->
-<div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
-    <h1>Login</h1>
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
-  </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploding Button</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+ 
+        #explodingButton {
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 24px;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+ 
+        #explodingButton:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+ 
+        .explosion {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            border-radius: 50%;
+            animation: explode 0.5s linear;
+        }
+ 
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(5);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
+<body>
+    <!-- Exploding Button -->
+    <button id="explodingButton" onclick="explodeButton()">Click Me!</button>
+ 
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+    <!-- Custom JS -->
+    <script>
+        function explodeButton() {
+            var explosion = document.createElement("div");
+            explosion.classList.add("explosion");
+            explosion.style.top = event.clientY + "px";
+            explosion.style.left = event.clientX + "px";
+            document.body.appendChild(explosion);
+ 
+            setTimeout(function() {
+                explosion.remove();
+            }, 500);
+        }
+    </script>
+</body>
 </html>
