@@ -1,10 +1,7 @@
-$ = function(id) {
-    return document.getElementById(id);
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
   }
   
-  var show = function(id) {
-      $(id).style.display ='block';
-  }
-  var hide = function(id) {
-      $(id).style.display ='none';
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
   }

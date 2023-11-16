@@ -1,134 +1,68 @@
-.popup {
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
   display: none;
   position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
   padding: 10px;
-  width: 280px;
-  left: 50%;
-  margin-left: -150px;
-  height: 180px;
-  top: 50%;
-  margin-top: -100px;
-  background: #FFF;
-  border: 3px solid #F04A49;
-  z-index: 20;
+  background-color: white;
 }
 
-#popup:after {
-  position: fixed;
-  content: "";
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: -2;
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
 }
 
-#popup:before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #FFF;
-  z-index: -1;
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
-/* Styling buttons & webpage */
-
-body {
-  background: offwhite;
-  font-family: Arial, sans-serif;
-  text-align: center;
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
 }
 
-button {
-    margin-top: 50px;
-    background-color: rgba(255,255,255,0.3);
-    border: 3px solid #F04A49;
-    color: #F04A49;
-    font-size: 25px;
-    padding: 10px 20px;
-    
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
 }
 
-button:hover {
-    background-color: #F04A49;
-    color: #FFF;
-    border: 3px solid #F04A49;
-    transition: all 0.3s ease 0s;
-}
-
-p {
-	margin: 1em 0;
-  font-size: 16px;
-}
-
-
-.popupk {
-  display: none;
-  position: fixed;
-  padding: 10px;
-  width: 280px;
-  left: 50%;
-  margin-left: -150px;
-  height: 180px;
-  top: 50%;
-  margin-top: -100px;
-  background: #FFF;
-  border: 3px solid #F04A49;
-  z-index: 20;
-}
-
-#popupk:after {
-  position: fixed;
-  content: "";
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: -2;
-}
-
-#popupk:before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #FFF;
-  z-index: -1;
-}
-
-/* Styling buttons & webpage */
-
-body {
-  background: offwhite;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-button {
-    margin-top: 50px;
-    background-color: rgba(255,255,255,0.3);
-    border: 3px solid #F04A49;
-    color: #F04A49;
-    font-size: 25px;
-    padding: 10px 20px;
-    
-}
-
-button:hover {
-    background-color: #F04A49;
-    color: #FFF;
-    border: 3px solid #F04A49;
-    transition: all 0.3s ease 0s;
-}
-
-p {
-	margin: 1em 0;
-  font-size: 16px;
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
 }
