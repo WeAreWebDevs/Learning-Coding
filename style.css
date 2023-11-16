@@ -22,7 +22,6 @@ body {
   width: 100px;
   height: 100px;
   background-color: #007bff;
-  border-radius: 50%;
   animation: explode 0.5s linear;
 }
 
